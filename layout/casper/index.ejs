@@ -1,0 +1,33 @@
+
+<header class="site-head" <% if (theme.cover) { %> style="background-image: url(<%- theme.cover %>)" <% } %>>
+  <div class="vertical">
+    <div class="site-head-content inner">
+      <% if (theme.logo) { %> <a class="blog-logo" href="<%- config.root %>"><img src="<%- theme.logo %>" alt="Blog Logo"/></a> <% } %>
+      <h1 class="blog-title"><%- config.title %></h1>
+      <h2 class="blog-description"><%- config.subtitle %></h2>
+    </div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <% page.posts.each(function(post) { %>
+    <% snippet = post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 250) + "..."; %>
+  <article class="post">
+    <header class="post-header">
+      <span class="post-meta">
+        <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, null) %></time>
+        <% if (post.tags && post.tags.length){ %> on <% post.tags.forEach(function(tag) { %><a href='<%= config.root + tag.path %>' style='margin:0 5px;'><%= tag.name %></a><% }); %><% } %>
+      </span>
+      <h2 class="post-title"><a href="<%- config.root %><%- post.path %>"><%- post.title %></a></h2>
+    </header>
+    <section class="post-excerpt">
+      <p><%- snippet %></p>
+    </section>
+  </article>
+  <% }); %>
+  <nav class="pagination" role="pagination">
+    <% if (page.prev) { %><a class="newer-posts" href="<%- config.root %><%- page.prev_link %>">← Newer Posts</a><% } %>
+    <span class="page-number">Page <%- page.current %> of <%- page.total %></span>
+    <% if (page.next) { %><a class="older-posts" href="<%- config.root %><%- page.next_link %>">Older Posts →</a><% } %>
+  </nav>
+</main>
