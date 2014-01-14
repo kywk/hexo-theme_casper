@@ -11,7 +11,6 @@
 
 <main class="content" role="main">
   <% page.posts.each(function(post) { %>
-    <% snippet = post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 250) + "..."; %>
   <article class="post">
     <header class="post-header">
       <span class="post-meta">
@@ -21,7 +20,18 @@
       <h2 class="post-title"><a href="<%- config.root %><%- post.path %>"><%- post.title %></a></h2>
     </header>
     <section class="post-excerpt">
-      <p><%- snippet %></p>
+      <p>
+      <% if (post.excerpt){ %>
+        <%- post.excerpt %>
+      <% } else { %>
+        <%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 220) %>
+      <% } %>
+      </p>
+      <% if (theme.excerpt_link) { %>
+      <p>
+          <a href="<%- config.root %><%- post.path %>" class="excerpt-link"><%= theme.excerpt_link %>...</a>
+      </p>
+      <% } %>
     </section>
   </article>
   <% }); %>
