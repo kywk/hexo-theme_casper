@@ -602,6 +602,55 @@ margin on the iframe, cause it breaks stuff. */
    6. Third Party Elements - Embeds from other services
    ========================================================================== */
 
+/* Hexo: Youtube, other video container */
+
+.video-container {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+}
+
+/* Hexo: Syntax Highlighter */
+
+figure.highlight {
+    background:#fff;
+    border-radius:0.3em;
+    border:1px solid #e1e1e1;
+    line-height:1.45em;
+    font-size:.9em;
+    margin-bottom:2.1em;
+    color:#222;
+    overflow:auto;
+    white-space:pre;
+    word-wrap:normal;
+}
+figure.highlight figcaption {
+    padding: 7px 0;
+    font-size: .9em;
+}
+figure.highlight table {
+    margin: 0;
+}
+ figure.highlight table > tbody > tr > td {
+    padding: 0;
+    background: #fff !important;
+}
+figure.highlight pre {
+    border: none;
+    margin: 0;
+}
+
 /* Github */
 
 .gist table {
