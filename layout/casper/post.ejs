@@ -19,6 +19,15 @@
     <section class="post-content">
       <%- post.content %>
     </section>
+      <section id="comment">
+          <h1 class="title">Comments</h1>
+
+          <% if(config.disqus_shortname) { %>
+          <div id="disqus_thread">
+              <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+          <% } %>
+      </section>
     <footer class="post-footer">
       <section class="author">
         <h4><%- config.author %></h4>
