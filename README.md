@@ -10,7 +10,7 @@ Preview: [live demo](http://kywk.github.io/hexo-theme-casper)
 ### Install
 
 ``` bash
-$ git https://github.com/kywk/hexo-theme-casper.git themes/casper
+$ git clone https://github.com/kywk/hexo-theme-casper.git themes/casper
 ```
 
 ### Enable
