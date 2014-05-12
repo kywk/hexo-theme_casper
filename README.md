@@ -43,7 +43,7 @@ rss:
 - **logo** - Your website logo.
 - **bio** - Descript yourself.
 - **rss** - RSS subscription link (change if using Feedburner)
-
+- **google_analytics** - Google Analytics id.
 
 ## Original Casper Copyright & License ##
 
