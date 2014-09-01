@@ -521,6 +521,10 @@ margin on the iframe, cause it breaks stuff. */
     margin: 4rem auto;
 }
 
+#comment h1 a {
+    text-decoration: none;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
