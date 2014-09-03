@@ -515,21 +515,19 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.5em;
 }
 
+.comments-area {
+    width: 80%;
+    max-width: 700px;
+    margin: 4rem auto;
+}
+
+#comment h1 a {
+    text-decoration: none;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
-
-/* Tweak the .post wrapper style */
-.post-template .post {
-    margin-top: 0;
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-/* Kill that stylish little circle that was on the border, too */
-.post-template .post:after {
-    display: none;
-}
 
 /* Insert some mad padding up in the header for better spacing */
 .post-template .post-header {
@@ -537,9 +535,27 @@ margin on the iframe, cause it breaks stuff. */
     text-align: center;
 }
 
-.post-template .blog-title {
-    display: inline-block;
-    padding: 2.5rem 0;
+.post-template .site-head {
+    color: #303538;
+    border-bottom: #ebf2f6 1px solid;
+    background: none !important;
+}
+
+.post-template .site-head:after {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    display: block;
+    width: 7px;
+    height: 7px;
+    margin-left: -5px;
+    content: '';
+    border: #e7eef2 1px solid;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: #fff 0 0 0 5px;
 }
 
 /* Keep large images within the bounds of the post-width */
@@ -1066,10 +1082,6 @@ pre .chunk {
 
     h4 {
         font-size: 2.3rem;
-    }
-
-    .post-template .post {
-        padding-bottom: 0;
     }
 
     .post-template .post-header {
